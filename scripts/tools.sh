@@ -2,9 +2,9 @@
 
 set -e
 
-OM_VERSION=0.38.0
-PIVNET_CLI_VERSION=0.0.52
-FLY_VERSION=3.14.1
+OM_VERSION=0.57.0
+PIVNET_CLI_VERSION=0.0.57
+FLY_VERSION=5.1.0
 TERRAFORM_VERSION=0.11.7
 GOVC_VERSION=0.18.0
 
@@ -53,9 +53,9 @@ wget -q https://github.com/pivotal-cf/pivnet-cli/releases/download/v$PIVNET_CLI_
   sudo chmod +x /usr/local/bin/pivnet
 
 # Install fly CLI
-wget -q https://github.com/concourse/concourse/releases/download/v$FLY_VERSION/fly_linux_amd64 && \
-  sudo mv fly_linux_amd64 /usr/local/bin/fly && \
+sudo wget -qO- https://github.com/concourse/concourse/releases/download/v$FLY_VERSION/fly-$FLY_VERSION-linux-amd64.tgz | tar xvz - -C /usr/local/bin/fly && \
   sudo chmod +x /usr/local/bin/fly
+  
 
 # Install Terraform
 wget -q -O terraform.zip https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
