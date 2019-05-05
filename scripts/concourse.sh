@@ -22,7 +22,7 @@ sudo -u postgres createdb --owner=concourse atc
 # Configure Concourse
 sudo mkdir -p /etc/concourse
 
-sudo wget -q -O /usr/local/bin/concourse https://github.com/concourse/concourse/releases/download/v$CONCOURSE_VERSION/concourse_linux_amd64
+sudo wget -qO- https://github.com/concourse/concourse/releases/download/v$CONCOURSE_VERSION/concourse-$CONCOURSE_VERSION-linux-amd64.tgz | tar xvz - -C /usr/local/bin/concourse
 
 sudo chmod +x /usr/local/bin/concourse
 
