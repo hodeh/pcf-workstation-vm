@@ -10,7 +10,7 @@
 
 set -e -u
 
-CONCOURSE_VERSION=3.14.1
+CONCOURSE_VERSION=5.1.0
 
 # Install packages
 sudo apt -y install postgresql postgresql-contrib traceroute
